@@ -22,13 +22,11 @@ import java.util.Optional;
 @RequestMapping("/clientes")
 public class ClienteController {
 
-
-
     private ClienteRepository clienteRepository;
     private CatalogoClienteService catalogoClienteService;
     @GetMapping
     public List<Cliente> listar() {
-        return clienteRepository.findAll();
+        return catalogoClienteService.buscarTodosCliente();
 
     }
 

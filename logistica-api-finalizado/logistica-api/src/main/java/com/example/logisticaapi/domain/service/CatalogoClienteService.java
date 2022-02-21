@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class CatalogoClienteService {
@@ -26,6 +28,13 @@ public class CatalogoClienteService {
         throw new NegocioExeption("Já existe um cliente cadastrado com esse e-mail");
         }
         return clienteRepository.save(cliente);
+    }
+
+    @Transactional
+        public List<Cliente> buscarTodosCliente(){
+        List<Cliente> listaCliente = clienteRepository.findAll();
+        return listaCliente;
+
     }
 
     public void excluir(Long clientId){

@@ -10,4 +10,5 @@ import javax.validation.constraints.NotNull;
 public class ClienteIdInput {
     @NotNull
     private Long id;
+
 }
